@@ -11,11 +11,12 @@ class Tabuleiro {
         }
         console.log(this.tabuleiro);
     }
-}
 
-colocarPeça(peça,linha,coluna)  
-    const casa = this.tabuleiro[linha][coluna]
-    casa.elementoHtml.innerHTML = peca.simbolo;
+    colocarPeca(peca, linha, coluna) {
+        const casa = this.tabuleiro[linha][coluna];
+        casa.elementoHtml.innerHTML = peca.simbolo;
+    }
+}
 
 class Casa {
     constructor(linha, coluna) {
@@ -58,13 +59,22 @@ class Peca {
 class Peao extends Peca {
     constructor(cor, linha, coluna) {
         super(cor, linha,coluna);
-        this.simbolo = cor === 'branca' ? '&#9823' : '&#9823';
+        this.simbolo = cor === 'branca' ? '&#9817' : '&#9823';
     }
 }
 
-peao = new Peao('branca', 1, 1);
-console.log(peao);
-
 const tabuleiro = new Tabuleiro();
+
+peao = new Peao('preto', 1, 1);
+
+tabuleiro.colocarPeca(peao, 1, 1);
+tabuleiro.colocarPeca(peao, 1, 0);
+tabuleiro.colocarPeca(peao, 1, 2);
+tabuleiro.colocarPeca(peao, 1, 3);
+tabuleiro.colocarPeca(peao, 1, 4);
+tabuleiro.colocarPeca(peao, 1, 5);
+tabuleiro.colocarPeca(peao, 1, 6)
+tabuleiro.colocarPeca(peao, 1, 7);
+tabuleiro.colocarPeca(peao, 1, 8);
+
 alert(tabuleiro.nome);
-tabuleiro.colocarPeça(peao,1,1);
